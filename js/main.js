@@ -27,19 +27,32 @@ var popularMenuSwiper = new Swiper('.swiper-container-popular', {
 	},
 });
 
-// window.addEventListener('scroll', () => {
-// 	let footer = document.querySelector('#footer');
-// 	const bottomNav = document.querySelector('#bottom-navbar');
+window.addEventListener('scroll', () => {
+	let footer = document.querySelector('#footer');
+	const bottomNav = document.querySelector('.bottom-navbar');
 
-// 	if(window.clientHeight >= window.clientHeight - footer.getBoundingClientRect().top) {
-// 		bottomNav.classList.add('active');	
-// 	} else {
-// 		bottomNav.classList.remove('active');	
-// 	}
-// 	console.log(window.pageYOffset);
-// 	console.log(window.pageYOffset - footer.getBoundingClientRect().top);
 
-// })
+	// console.log(window.scrollY);
+	// console.log(window.pageYOffset - footer.getBoundingClientRect().top)
+	// console.log(window.pageYOffset - footer.getBoundingClientRect().top);
+
+	const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+
+	if(window.scrollY === scrollable) {
+		bottomNav.classList.add('active');	
+	} else {
+		bottomNav.classList.remove('active');	
+	}
+
+	// console.log(window.scrollY);
+	// console.log(scrollable);
+})
+
+
+const goTop = document.querySelector('.go-top');
+goTop.addEventListener('click', () => {
+	window.scrollTo(0,0);
+})
 
 
 

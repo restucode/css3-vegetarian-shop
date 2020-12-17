@@ -30,7 +30,6 @@ body {
   position: relative;
   margin: 0px auto;
   overflow-x: hidden;
-
   background: var(--primary);
   font-family: var(--poppins);
 }
@@ -71,7 +70,7 @@ body {
   padding: 10px 15px;
   text-indent: 25px;
   border-radius: 3px;
-  box-shadow: 0px 1px 20px 2px rgba(0,0,0,.1);
+  box-shadow: 0px 1px 5px 2px rgba(0,0,0,.1);
 }
 
 #nav form svg {
@@ -375,7 +374,7 @@ body {
   position: relative;
 }
 
-#bottom-navbar {
+.bottom-navbar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -392,13 +391,17 @@ body {
   z-index: 10;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  visibility: visible;
+  opacity: 1;
+  transition: .5s;
 }
 
-#bottom-navbar.active {
-  display: none;
+.bottom-navbar.active {
+visibility: hidden;
+  opacity: 0;
 }
 
-#bottom-navbar a {
+.bottom-navbar a {
   color: grey;
   display: flex;
   justify-content: center;
@@ -406,26 +409,27 @@ body {
   flex-direction: column;
 }
 
-#bottom-navbar a.active {
+.bottom-navbar a.active {
   color: black;
 }
 
-#bottom-navbar a svg {
+.bottom-navbar a svg {
   width: 27px;
 }
-#bottom-navbar a span {
+.bottom-navbar a span {
   font-size: .7rem;
   padding-top: 5px;
 }
 
 
 #footer {
-  padding: 20px 0 100px;
+  padding: 20px 0 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  position: relative;
 }
 
 #footer h2 {
@@ -447,6 +451,32 @@ body {
 #footer div svg {
   width: 25px;
   margin-left: 5px;
+}
+
+.go-top {
+  background: #2CBD70;
+  position: absolute;
+  bottom: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: all .4s;
+  z-index: 4;
+  cursor: pointer;
+  box-shadow: -1px -5px 20px 2px rgba(0,0,0,.2);
+}
+
+.go-top svg {
+ bottom: 32px;
+ color: white;
+ width: 50px;
+ height: 50px;
+ transform: translateX(-2px);
+ pointer-events: auto;
 }
 
 
@@ -471,7 +501,7 @@ body {
     grid-column: span 3;
   } 
 
-  #bottom-navbar {
+  .bottom-navbar {
     width: 620px;
     margin: auto;
   }
