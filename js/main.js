@@ -27,6 +27,20 @@ var popularMenuSwiper = new Swiper('.swiper-container-popular', {
 	},
 });
 
+// window.addEventListener('scroll', () => {
+// 	let footer = document.querySelector('#footer');
+// 	const bottomNav = document.querySelector('#bottom-navbar');
+
+// 	if(window.clientHeight >= window.clientHeight - footer.getBoundingClientRect().top) {
+// 		bottomNav.classList.add('active');	
+// 	} else {
+// 		bottomNav.classList.remove('active');	
+// 	}
+// 	console.log(window.pageYOffset);
+// 	console.log(window.pageYOffset - footer.getBoundingClientRect().top);
+
+// })
+
 
 
 
